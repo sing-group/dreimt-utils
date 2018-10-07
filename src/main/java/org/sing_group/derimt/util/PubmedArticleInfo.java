@@ -28,6 +28,10 @@ public class PubmedArticleInfo {
   public List<String> getAuthors() {
     return authors;
   }
+  
+  public String getAuthorsString() {
+    return this.authors.stream().collect(joining(", "));
+  }
 
   public String getArticleAbstract() {
     return articleAbstract;
