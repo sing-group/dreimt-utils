@@ -30,6 +30,16 @@ public class PubmedArticleSetXmlParser {
   public static Map<String, PubmedArticleInfo> parse(InputStream xmlInputStream) {
     Map<String, PubmedArticleInfo> toret = new HashMap<>();
     DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+
+    dbf.setNamespaceAware(false);
+    dbf.setValidating(false);
+    try {
+      dbf.setFeature("http://xml.org/sax/features/namespaces", false);
+      dbf.setFeature("http://xml.org/sax/features/validation", false);
+      dbf.setFeature("http://apache.org/xml/features/nonvalidating/load-dtd-grammar", false);
+      dbf.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
+    } catch (ParserConfigurationException e) {}
+
     try {
       DocumentBuilder db = dbf.newDocumentBuilder();
       Document document = db.parse(xmlInputStream);
