@@ -1,0 +1,665 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PubmedArticleSet PUBLIC "-//NLM//DTD PubMedArticle, 1st June 2018//EN" "https://dtd.nlm.nih.gov/ncbi/pubmed/out/pubmed_180601.dtd">
+<PubmedArticleSet>
+<PubmedArticle>
+    <MedlineCitation Status="MEDLINE" Owner="NLM">
+        <PMID Version="1">22368089</PMID>
+        <DateCompleted>
+            <Year>2013</Year>
+            <Month>07</Month>
+            <Day>22</Day>
+        </DateCompleted>
+        <DateRevised>
+            <Year>2017</Year>
+            <Month>09</Month>
+            <Day>22</Day>
+        </DateRevised>
+        <Article PubModel="Print-Electronic">
+            <Journal>
+                <ISSN IssnType="Electronic">1460-2199</ISSN>
+                <JournalIssue CitedMedium="Internet">
+                    <Volume>23</Volume>
+                    <Issue>2</Issue>
+                    <PubDate>
+                        <Year>2013</Year>
+                        <Month>Feb</Month>
+                    </PubDate>
+                </JournalIssue>
+                <Title>Cerebral cortex (New York, N.Y. : 1991)</Title>
+                <ISOAbbreviation>Cereb. Cortex</ISOAbbreviation>
+            </Journal>
+            <ArticleTitle>The development and activity-dependent expression of aggrecan in the cat visual cortex.</ArticleTitle>
+            <Pagination>
+                <MedlinePgn>349-60</MedlinePgn>
+            </Pagination>
+            <ELocationID EIdType="doi" ValidYN="Y">10.1093/cercor/bhs015</ELocationID>
+            <Abstract>
+                <AbstractText>The Cat-301 monoclonal antibody identifies aggrecan, a chondroitin sulfate proteoglycan in the cat visual cortex and dorsal lateral geniculate nucleus (dLGN). During development, aggrecan expression increases in the dLGN with a time course that matches the decline in plasticity. Moreover, examination of tissue from selectively visually deprived cats shows that expression is activity dependent, suggesting a role for aggrecan in the termination of the sensitive period. Here, we demonstrate for the first time that the onset of aggrecan expression in area 17 also correlates with the decline in experience-dependent plasticity in visual cortex and that this expression is experience dependent. Dark rearing until 15 weeks of age dramatically reduced the density of aggrecan-positive neurons in the extragranular layers, but not in layer IV. This effect was reversible as dark-reared animals that were subsequently exposed to light showed normal numbers of Cat-301-positive cells. The reduction in aggrecan following certain early deprivation regimens is the first biochemical correlate of the functional changes to the γ-aminobutyric acidergic system that have been reported following early deprivation in cats.</AbstractText>
+            </Abstract>
+            <AuthorList CompleteYN="Y">
+                <Author ValidYN="Y">
+                    <LastName>Kind</LastName>
+                    <ForeName>P C</ForeName>
+                    <Initials>PC</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Centre for Integrative Physiology, University of Edinburgh, Edinburgh EH8 9XD, UK.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Sengpiel</LastName>
+                    <ForeName>F</ForeName>
+                    <Initials>F</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Beaver</LastName>
+                    <ForeName>C J</ForeName>
+                    <Initials>CJ</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Crocker-Buque</LastName>
+                    <ForeName>A</ForeName>
+                    <Initials>A</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Kelly</LastName>
+                    <ForeName>G M</ForeName>
+                    <Initials>GM</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Matthews</LastName>
+                    <ForeName>R T</ForeName>
+                    <Initials>RT</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Mitchell</LastName>
+                    <ForeName>D E</ForeName>
+                    <Initials>DE</Initials>
+                </Author>
+            </AuthorList>
+            <Language>eng</Language>
+            <GrantList CompleteYN="Y">
+                <Grant>
+                    <GrantID>G97 06008</GrantID>
+                    <Agency>Medical Research Council</Agency>
+                    <Country>United Kingdom</Country>
+                </Grant>
+                <Grant>
+                    <GrantID>G0700967</GrantID>
+                    <Agency>Medical Research Council</Agency>
+                    <Country>United Kingdom</Country>
+                </Grant>
+                <Grant>
+                    <GrantID>G0601584</GrantID>
+                    <Agency>Medical Research Council</Agency>
+                    <Country>United Kingdom</Country>
+                </Grant>
+                <Grant>
+                    <GrantID>G0300466</GrantID>
+                    <Agency>Medical Research Council</Agency>
+                    <Country>United Kingdom</Country>
+                </Grant>
+                <Grant>
+                    <GrantID>G0502299</GrantID>
+                    <Agency>Medical Research Council</Agency>
+                    <Country>United Kingdom</Country>
+                </Grant>
+                <Grant>
+                    <GrantID>EY 06511</GrantID>
+                    <Acronym>EY</Acronym>
+                    <Agency>NEI NIH HHS</Agency>
+                    <Country>United States</Country>
+                </Grant>
+            </GrantList>
+            <PublicationTypeList>
+                <PublicationType UI="D016428">Journal Article</PublicationType>
+                <PublicationType UI="D052061">Research Support, N.I.H., Extramural</PublicationType>
+                <PublicationType UI="D013485">Research Support, Non-U.S. Gov't</PublicationType>
+            </PublicationTypeList>
+            <ArticleDate DateType="Electronic">
+                <Year>2012</Year>
+                <Month>02</Month>
+                <Day>23</Day>
+            </ArticleDate>
+        </Article>
+        <MedlineJournalInfo>
+            <Country>United States</Country>
+            <MedlineTA>Cereb Cortex</MedlineTA>
+            <NlmUniqueID>9110718</NlmUniqueID>
+            <ISSNLinking>1047-3211</ISSNLinking>
+        </MedlineJournalInfo>
+        <ChemicalList>
+            <Chemical>
+                <RegistryNumber>0</RegistryNumber>
+                <NameOfSubstance UI="D053674">Aggrecans</NameOfSubstance>
+            </Chemical>
+        </ChemicalList>
+        <CitationSubset>IM</CitationSubset>
+        <CommentsCorrectionsList>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Brain Res. 1980 Jun 9;191(2):545-50</RefSource>
+                <PMID Version="1">7378770</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Exp Brain Res. 1980;39(1):17-21</RefSource>
+                <PMID Version="1">7379883</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Exp Brain Res. 1980;41(1):1-10</RefSource>
+                <PMID Version="1">7461064</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Nature. 1981 May 28;291(5813):318-20</RefSource>
+                <PMID Version="1">7231550</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Annu Rev Psychol. 1981;32:477-522</RefSource>
+                <PMID Version="1">7015996</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Brain Res. 1981 Aug;254(1):37-53</RefSource>
+                <PMID Version="1">7272771</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Brain Res. 1981 Sep 14;220(2):255-67</RefSource>
+                <PMID Version="1">7284755</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Nature. 1982 Oct 14;299(5884):583-91</RefSource>
+                <PMID Version="1">6811951</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Brain Res. 1983 Jun;284(2-3):155-64</RefSource>
+                <PMID Version="1">6871721</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Nature. 1984 Jan 19-25;307(5948):267-9</RefSource>
+                <PMID Version="1">6694727</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Cold Spring Harb Symp Quant Biol. 1983;48 Pt 2:877-89</RefSource>
+                <PMID Version="1">6426850</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>J Neurosci. 1984 Oct;4(10):2543-52</RefSource>
+                <PMID Version="1">6491722</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>J Comp Neurol. 1985 Mar 8;233(2):159-89</RefSource>
+                <PMID Version="1">3973100</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>J Neurophysiol. 1985 Feb;53(2):572-89</RefSource>
+                <PMID Version="1">3981230</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>J Comp Neurol. 1985 May 22;235(4):448-66</RefSource>
+                <PMID Version="1">3998219</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>J Neurosci. 1985 May;5(5):1262-75</RefSource>
+                <PMID Version="1">2987436</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Exp Brain Res. 1987;65(3):666-72</RefSource>
+                <PMID Version="1">3556493</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Exp Brain Res. 1987;65(3):673-5</RefSource>
+                <PMID Version="1">3556494</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>J Neurosci. 1987 May;7(5):1526-36</RefSource>
+                <PMID Version="1">3572489</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Brain Res. 1987 Dec 15;465(1-2):67-76</RefSource>
+                <PMID Version="1">2830948</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>J Neurosci. 1988 Mar;8(3):874-82</RefSource>
+                <PMID Version="1">3346725</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>J Comp Neurol. 1988 Jun 8;272(2):293-302</RefSource>
+                <PMID Version="1">2840455</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>J Neurosci. 1990 Sep;10(9):3014-24</RefSource>
+                <PMID Version="1">1697900</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Vis Neurosci. 1990 Jul;5(1):67-81</RefSource>
+                <PMID Version="1">1702988</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Brain Res Dev Brain Res. 1991 Feb 22;58(2):151-8</RefSource>
+                <PMID Version="1">2029762</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Philos Trans R Soc Lond B Biol Sci. 1991 Jul 29;333(1266):51-79</RefSource>
+                <PMID Version="1">1682958</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Cold Spring Harb Symp Quant Biol. 1990;55:505-14</RefSource>
+                <PMID Version="1">2132834</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>J Neurophysiol. 1992 Jan;67(1):197-202</RefSource>
+                <PMID Version="1">1552319</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Neuroscience. 1992 Dec;51(4):749-53</RefSource>
+                <PMID Version="1">1488119</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Cereb Cortex. 1994 Jul-Aug;4(4):361-75</RefSource>
+                <PMID Version="1">7950309</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>J Neurosci. 1994 Nov;14(11 Pt 2):6855-71</RefSource>
+                <PMID Version="1">7965083</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>J Comp Neurol. 1995 Sep 4;359(4):523-36</RefSource>
+                <PMID Version="1">7499545</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>J Comp Neurol. 1996 Jan 1;364(1):6-15</RefSource>
+                <PMID Version="1">8789272</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Curr Opin Neurobiol. 1996 Feb;6(1):119-26</RefSource>
+                <PMID Version="1">8794047</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>J Neurosci. 1997 Mar 15;17(6):1928-39</RefSource>
+                <PMID Version="1">9045722</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Science. 1998 Mar 6;279(5356):1531-3</RefSource>
+                <PMID Version="1">9488651</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Science. 1998 Nov 20;282(5393):1504-8</RefSource>
+                <PMID Version="1">9822384</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Cell. 1999 Sep 17;98(6):739-55</RefSource>
+                <PMID Version="1">10499792</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>J Neurobiol. 1999 Oct;41(1):83-91</RefSource>
+                <PMID Version="1">10504195</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Neuron. 2004 Dec 16;44(6):905-8</RefSource>
+                <PMID Version="1">15603733</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Dev Psychobiol. 2005 Apr;46(3):163-83</RefSource>
+                <PMID Version="1">15772974</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Nat Rev Neurosci. 2005 Nov;6(11):877-88</RefSource>
+                <PMID Version="1">16261181</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Nat Neurosci. 2006 Jan;9(1):127-32</RefSource>
+                <PMID Version="1">16327785</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Nat Neurosci. 2006 May;9(5):650-9</RefSource>
+                <PMID Version="1">16582906</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Nat Neurosci. 2006 May;9(5):660-8</RefSource>
+                <PMID Version="1">16633343</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>J Neurosci. 2007 May 16;27(20):5405-13</RefSource>
+                <PMID Version="1">17507562</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Nat Neurosci. 2007 Sep;10(9):1134-6</RefSource>
+                <PMID Version="1">17694050</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Neuron. 2007 Oct 25;56(2):312-26</RefSource>
+                <PMID Version="1">17964248</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Curr Opin Neurobiol. 2008 Feb;18(1):101-7</RefSource>
+                <PMID Version="1">18534841</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Curr Opin Neurobiol. 2000 Feb;10(1):138-45</RefSource>
+                <PMID Version="1">10679428</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Nature. 2000 Mar 9;404(6774):183-6</RefSource>
+                <PMID Version="1">10724170</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>J Neurosci. 1999 Nov 15;19(22):RC40</RefSource>
+                <PMID Version="1">10559430</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Neuroscience. 2002;111(1):35-45</RefSource>
+                <PMID Version="1">11955710</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>J Neurosci. 2002 Sep 1;22(17):7536-47</RefSource>
+                <PMID Version="1">12196577</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Science. 2002 Nov 8;298(5596):1248-51</RefSource>
+                <PMID Version="1">12424383</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Philos Trans R Soc Lond B Biol Sci. 2003 Apr 29;358(1432):649-55</RefSource>
+                <PMID Version="1">12740110</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Trends Neurosci. 2003 Jul;26(7):369-78</RefSource>
+                <PMID Version="1">12850433</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>J Neurochem. 2004 Mar;88(6):1455-69</RefSource>
+                <PMID Version="1">15009647</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Exp Brain Res. 1975;22(1):25-36</RefSource>
+                <PMID Version="1">1116499</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>J Physiol. 1975 Jul;248(3):663-716</RefSource>
+                <PMID Version="1">1151843</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>J Physiol. 1975 Sep;250(2):305-29</RefSource>
+                <PMID Version="1">1177144</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>J Physiol. 1976 Feb;255(2):511-25</RefSource>
+                <PMID Version="1">1255531</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Exp Brain Res. 1976 May 28;25(2):139-56</RefSource>
+                <PMID Version="1">1278274</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>J Physiol. 1977 Oct;271(3):699-720</RefSource>
+                <PMID Version="1">926020</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Nature. 1978 Apr 27;272(5656):816-7</RefSource>
+                <PMID Version="1">643071</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>Exp Brain Res. 1978 Apr 14;31(4):547-60</RefSource>
+                <PMID Version="1">658180</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>J Physiol. 1978 Aug;281:267-83</RefSource>
+                <PMID Version="1">702379</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>J Neurophysiol. 1980 Apr;43(4):1026-40</RefSource>
+                <PMID Version="1">7359175</PMID>
+            </CommentsCorrections>
+            <CommentsCorrections RefType="Cites">
+                <RefSource>J Comp Neurol. 1980 Feb 1;189(3):483-524</RefSource>
+                <PMID Version="1">7372859</PMID>
+            </CommentsCorrections>
+        </CommentsCorrectionsList>
+        <MeshHeadingList>
+            <MeshHeading>
+                <DescriptorName UI="D053674" MajorTopicYN="N">Aggrecans</DescriptorName>
+                <QualifierName UI="Q000378" MajorTopicYN="Y">metabolism</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D000818" MajorTopicYN="N">Animals</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D002415" MajorTopicYN="N">Cats</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D007150" MajorTopicYN="N">Immunohistochemistry</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D008027" MajorTopicYN="N">Light</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D009473" MajorTopicYN="N">Neuronal Plasticity</DescriptorName>
+                <QualifierName UI="Q000502" MajorTopicYN="Y">physiology</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D012683" MajorTopicYN="N">Sensory Deprivation</DescriptorName>
+                <QualifierName UI="Q000502" MajorTopicYN="N">physiology</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D014793" MajorTopicYN="N">Visual Cortex</DescriptorName>
+                <QualifierName UI="Q000254" MajorTopicYN="Y">growth &amp; development</QualifierName>
+                <QualifierName UI="Q000378" MajorTopicYN="Y">metabolism</QualifierName>
+            </MeshHeading>
+        </MeshHeadingList>
+    </MedlineCitation>
+    <PubmedData>
+        <History>
+            <PubMedPubDate PubStatus="entrez">
+                <Year>2012</Year>
+                <Month>2</Month>
+                <Day>28</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="pubmed">
+                <Year>2012</Year>
+                <Month>3</Month>
+                <Day>1</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="medline">
+                <Year>2013</Year>
+                <Month>7</Month>
+                <Day>23</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+        </History>
+        <PublicationStatus>ppublish</PublicationStatus>
+        <ArticleIdList>
+            <ArticleId IdType="pubmed">22368089</ArticleId>
+            <ArticleId IdType="pii">bhs015</ArticleId>
+            <ArticleId IdType="doi">10.1093/cercor/bhs015</ArticleId>
+            <ArticleId IdType="pmc">PMC3539452</ArticleId>
+        </ArticleIdList>
+    </PubmedData>
+</PubmedArticle>
+
+
+<PubmedArticle>
+    <MedlineCitation Status="In-Data-Review" Owner="NLM">
+        <PMID Version="1">30235322</PMID>
+        <DateRevised>
+            <Year>2018</Year>
+            <Month>09</Month>
+            <Day>20</Day>
+        </DateRevised>
+        <Article PubModel="Electronic-eCollection">
+            <Journal>
+                <ISSN IssnType="Electronic">1932-6203</ISSN>
+                <JournalIssue CitedMedium="Internet">
+                    <Volume>13</Volume>
+                    <Issue>9</Issue>
+                    <PubDate>
+                        <Year>2018</Year>
+                    </PubDate>
+                </JournalIssue>
+                <Title>PloS one</Title>
+                <ISOAbbreviation>PLoS ONE</ISOAbbreviation>
+            </Journal>
+            <ArticleTitle>GC4S: A bioinformatics-oriented Java software library of reusable graphical user interface components.</ArticleTitle>
+            <Pagination>
+                <MedlinePgn>e0204474</MedlinePgn>
+            </Pagination>
+            <ELocationID EIdType="doi" ValidYN="Y">10.1371/journal.pone.0204474</ELocationID>
+            <Abstract>
+                <AbstractText>Modern bioinformatics and computational biology are fields of study driven by the availability of effective software required for conducting appropriate research tasks. Apart from providing reliable and fast implementations of different data analysis algorithms, these software applications should also be clear and easy to use through proper user interfaces, providing appropriate data management and visualization capabilities. In this regard, the user experience obtained by interacting with these applications via their Graphical User Interfaces (GUI) is a key factor for their final success and real utility for researchers. Despite the existence of different packages and applications focused on advanced data visualization, there is a lack of specific libraries providing pertinent GUI components able to help scientific bioinformatics software developers. To that end, this paper introduces GC4S, a bioinformatics-oriented collection of high-level, extensible, and reusable Java GUI elements specifically designed to speed up bioinformatics software development. Within GC4S, developers of new applications can focus on the specific GUI requirements of their projects, relying on GC4S for generalities and abstractions. GC4S is free software distributed under the terms of GNU Lesser General Public License and both source code and documentation are publicly available at http://www.sing-group.org/gc4s.</AbstractText>
+            </Abstract>
+            <AuthorList CompleteYN="Y">
+                <Author ValidYN="Y">
+                    <LastName>López-Fernández</LastName>
+                    <ForeName>Hugo</ForeName>
+                    <Initials>H</Initials>
+                    <Identifier Source="ORCID">http://orcid.org/0000-0002-6476-7206</Identifier>
+                    <AffiliationInfo>
+                        <Affiliation>ESEI-Escuela Superior de Ingeniería Informática, Universidad de Vigo, Ourense, Spain.</Affiliation>
+                    </AffiliationInfo>
+                    <AffiliationInfo>
+                        <Affiliation>CINBIO-Centro de Investigaciones Biomédicas, Universidad de Vigo, Vigo, Spain.</Affiliation>
+                    </AffiliationInfo>
+                    <AffiliationInfo>
+                        <Affiliation>SING Research Group, Galicia Sur Health Research Institute (IIS Galicia Sur), SERGAS-UVIGO, Spain.</Affiliation>
+                    </AffiliationInfo>
+                    <AffiliationInfo>
+                        <Affiliation>Instituto de Investigação e Inovação em Saúde (I3S), Universidade do Porto, Porto, Portugal.</Affiliation>
+                    </AffiliationInfo>
+                    <AffiliationInfo>
+                        <Affiliation>Instituto de Biologia Molecular e Celular (IBMC), Porto, Portugal.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Reboiro-Jato</LastName>
+                    <ForeName>Miguel</ForeName>
+                    <Initials>M</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>ESEI-Escuela Superior de Ingeniería Informática, Universidad de Vigo, Ourense, Spain.</Affiliation>
+                    </AffiliationInfo>
+                    <AffiliationInfo>
+                        <Affiliation>CINBIO-Centro de Investigaciones Biomédicas, Universidad de Vigo, Vigo, Spain.</Affiliation>
+                    </AffiliationInfo>
+                    <AffiliationInfo>
+                        <Affiliation>SING Research Group, Galicia Sur Health Research Institute (IIS Galicia Sur), SERGAS-UVIGO, Spain.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Glez-Peña</LastName>
+                    <ForeName>Daniel</ForeName>
+                    <Initials>D</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>ESEI-Escuela Superior de Ingeniería Informática, Universidad de Vigo, Ourense, Spain.</Affiliation>
+                    </AffiliationInfo>
+                    <AffiliationInfo>
+                        <Affiliation>CINBIO-Centro de Investigaciones Biomédicas, Universidad de Vigo, Vigo, Spain.</Affiliation>
+                    </AffiliationInfo>
+                    <AffiliationInfo>
+                        <Affiliation>SING Research Group, Galicia Sur Health Research Institute (IIS Galicia Sur), SERGAS-UVIGO, Spain.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Laza</LastName>
+                    <ForeName>Rosalía</ForeName>
+                    <Initials>R</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>ESEI-Escuela Superior de Ingeniería Informática, Universidad de Vigo, Ourense, Spain.</Affiliation>
+                    </AffiliationInfo>
+                    <AffiliationInfo>
+                        <Affiliation>CINBIO-Centro de Investigaciones Biomédicas, Universidad de Vigo, Vigo, Spain.</Affiliation>
+                    </AffiliationInfo>
+                    <AffiliationInfo>
+                        <Affiliation>SING Research Group, Galicia Sur Health Research Institute (IIS Galicia Sur), SERGAS-UVIGO, Spain.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Pavón</LastName>
+                    <ForeName>Reyes</ForeName>
+                    <Initials>R</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>ESEI-Escuela Superior de Ingeniería Informática, Universidad de Vigo, Ourense, Spain.</Affiliation>
+                    </AffiliationInfo>
+                    <AffiliationInfo>
+                        <Affiliation>CINBIO-Centro de Investigaciones Biomédicas, Universidad de Vigo, Vigo, Spain.</Affiliation>
+                    </AffiliationInfo>
+                    <AffiliationInfo>
+                        <Affiliation>SING Research Group, Galicia Sur Health Research Institute (IIS Galicia Sur), SERGAS-UVIGO, Spain.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Fdez-Riverola</LastName>
+                    <ForeName>Florentino</ForeName>
+                    <Initials>F</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>ESEI-Escuela Superior de Ingeniería Informática, Universidad de Vigo, Ourense, Spain.</Affiliation>
+                    </AffiliationInfo>
+                    <AffiliationInfo>
+                        <Affiliation>CINBIO-Centro de Investigaciones Biomédicas, Universidad de Vigo, Vigo, Spain.</Affiliation>
+                    </AffiliationInfo>
+                    <AffiliationInfo>
+                        <Affiliation>SING Research Group, Galicia Sur Health Research Institute (IIS Galicia Sur), SERGAS-UVIGO, Spain.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+            </AuthorList>
+            <Language>eng</Language>
+            <PublicationTypeList>
+                <PublicationType UI="D016428">Journal Article</PublicationType>
+            </PublicationTypeList>
+            <ArticleDate DateType="Electronic">
+                <Year>2018</Year>
+                <Month>09</Month>
+                <Day>20</Day>
+            </ArticleDate>
+        </Article>
+        <MedlineJournalInfo>
+            <Country>United States</Country>
+            <MedlineTA>PLoS One</MedlineTA>
+            <NlmUniqueID>101285081</NlmUniqueID>
+            <ISSNLinking>1932-6203</ISSNLinking>
+        </MedlineJournalInfo>
+        <CoiStatement>The authors have declared that no competing interests exist.</CoiStatement>
+    </MedlineCitation>
+    <PubmedData>
+        <History>
+            <PubMedPubDate PubStatus="received">
+                <Year>2018</Year>
+                <Month>08</Month>
+                <Day>06</Day>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="accepted">
+                <Year>2018</Year>
+                <Month>09</Month>
+                <Day>07</Day>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="entrez">
+                <Year>2018</Year>
+                <Month>9</Month>
+                <Day>21</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="pubmed">
+                <Year>2018</Year>
+                <Month>9</Month>
+                <Day>21</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="medline">
+                <Year>2018</Year>
+                <Month>9</Month>
+                <Day>21</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+        </History>
+        <PublicationStatus>epublish</PublicationStatus>
+        <ArticleIdList>
+            <ArticleId IdType="pubmed">30235322</ArticleId>
+            <ArticleId IdType="doi">10.1371/journal.pone.0204474</ArticleId>
+            <ArticleId IdType="pii">PONE-D-18-23135</ArticleId>
+        </ArticleIdList>
+    </PubmedData>
+</PubmedArticle>
+
+</PubmedArticleSet>

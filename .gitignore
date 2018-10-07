@@ -1,0 +1,8 @@
+/target
+gc4s*/target
+gc4s*/bin
+.project
+.settings
+.classpath
+/artwork
+**/pom.xml.versionsBackup
