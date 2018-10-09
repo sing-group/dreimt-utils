@@ -19,7 +19,7 @@ public class GseaGeneSetHtmlParserTest {
 
   @Test
   public void testParseXml() throws FileNotFoundException {
-    Optional<String> result = GseaGeneSetHtmlParser.getPubmedId(new FileInputStream(testHtmlFile));
+    Optional<String> result = new GseaGeneSetHtmlParser().getPubmedId(new FileInputStream(testHtmlFile));
     assertEquals("12526810", result.get());
   }
 }

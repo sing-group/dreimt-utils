@@ -4,10 +4,18 @@ import static java.util.Optional.empty;
 import static java.util.Optional.of;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 /**
@@ -18,13 +26,53 @@ import java.util.Optional;
  *
  */
 public class GseaGeneSetHtmlParser {
-
   private static final String PUBMED = "Pubmed ";
+  private static final String NOT_AVAILABLE = "NOT_AVAILABLE";
 
-  public static Optional<String> getPubmedId(URL url, int attempts) {
+  private File gseaCacheFile;
+  private Map<String, String> cache = new HashMap<>();
+
+  public GseaGeneSetHtmlParser() {
+    this(new File("data/gsea-pubmed-ids-cache.dat"));
+  }
+
+  public GseaGeneSetHtmlParser(File gseaCacheFile) {
+    this.gseaCacheFile = gseaCacheFile;
+    this.restoreCache();
+  }
+
+  private void restoreCache() {
+    if (this.gseaCacheFile.exists()) {
+      try {
+        FileInputStream fis = new FileInputStream(gseaCacheFile);
+        Object cache = new ObjectInputStream(fis).readObject();
+        fis.close();
+
+        try {
+          @SuppressWarnings("unchecked")
+          Map<String, String> map = (Map<String, String>) cache;
+          this.cache.putAll(map);
+        } catch (ClassCastException e) {
+          throw new RuntimeException(e);
+        }
+      } catch (ClassNotFoundException | IOException e) {
+        throw new RuntimeException(e);
+      }
+    }
+  }
+
+  public Optional<String> getPubmedId(String url) throws MalformedURLException {
+    if (this.cache.containsKey(url)) {
+      String cacheValue = this.cache.get(url);
+      return cacheValue.equals(NOT_AVAILABLE) ? Optional.empty() : Optional.of(cacheValue);
+    } else {
+      return saveInCache(url, getPubmedId(new URL(url), 3));
+    }
+  }
+
+  private Optional<String> getPubmedId(URL url, int attempts) {
     int attemptCount = 0;
     do {
-
       try {
         Optional<String> result = getPubmedId(url.openStream());
         return result;
@@ -37,7 +85,7 @@ public class GseaGeneSetHtmlParser {
     return Optional.empty();
   }
 
-  public static Optional<String> getPubmedId(InputStream htmlInputStream) {
+  public Optional<String> getPubmedId(InputStream htmlInputStream) {
     try {
       BufferedReader br = new BufferedReader(new InputStreamReader(htmlInputStream, "ISO-8859-1"));
       String line;
@@ -50,6 +98,23 @@ public class GseaGeneSetHtmlParser {
     } catch (IOException e) {
       e.printStackTrace();
       return empty();
+    }
+  }
+
+  private Optional<String> saveInCache(String url, Optional<String> value) {
+    this.cache.put(url, value.orElse(NOT_AVAILABLE));
+    this.saveCache();
+    return value;
+  }
+
+  private void saveCache() {
+    FileOutputStream fos;
+    try {
+      fos = new FileOutputStream(this.gseaCacheFile);
+      new ObjectOutputStream(fos).writeObject(this.cache);
+      fos.close();
+    } catch (IOException e) {
+      throw new RuntimeException(e);
     }
   }
 }

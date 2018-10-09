@@ -2,9 +2,12 @@ package org.sing_group.derimt.util;
 
 import static java.util.stream.Collectors.joining;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class PubmedArticleInfo {
+public class PubmedArticleInfo implements Serializable {
+  private static final long serialVersionUID = 1L;
+
   private String pubmedId;
   private String articleTitle;
   private List<String> authors;
@@ -28,7 +31,7 @@ public class PubmedArticleInfo {
   public List<String> getAuthors() {
     return authors;
   }
-  
+
   public String getAuthorsString() {
     return this.authors.stream().collect(joining(", "));
   }

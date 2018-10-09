@@ -6,7 +6,6 @@ import static java.util.Optional.of;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.OpenOption;
 import java.nio.file.StandardOpenOption;
@@ -29,10 +28,14 @@ public class GeneSetsLinksResolver {
 
   private int headerLines;
   private int batchSize;
+  private PubmedIdsResolver pubmedIdsResolver;
+  private GseaGeneSetHtmlParser gseaGeneSetHtmlParser;
 
   public GeneSetsLinksResolver(int headerLines, int batchSize) {
     this.headerLines = headerLines;
     this.batchSize = batchSize;
+    this.pubmedIdsResolver = new PubmedIdsResolver();
+    this.gseaGeneSetHtmlParser = new GseaGeneSetHtmlParser();
   }
 
   public void process(File tsvInput, File tsvOutput, boolean appendOutput) throws IOException {
@@ -47,7 +50,7 @@ public class GeneSetsLinksResolver {
         continue;
       }
 
-      Optional<String> pubmedId = GseaGeneSetHtmlParser.getPubmedId(new URL(optLine.get().getUrl()), 3);
+      Optional<String> pubmedId = gseaGeneSetHtmlParser.getPubmedId(optLine.get().getUrl());
       if (!pubmedId.isPresent()) {
         lineToPmid.put(optLine.get(), NA_ID);
       } else {
@@ -62,7 +65,7 @@ public class GeneSetsLinksResolver {
     for (List<String> batchList : batchLists) {
       try {
         Thread.sleep(1000);
-        Map<String, PubmedArticleInfo> currentIds = PubmedIdsResolver.resolve(batchList);
+        Map<String, PubmedArticleInfo> currentIds = this.pubmedIdsResolver.resolve(batchList);
         if (currentIds.keySet().size() != batchList.size()) {
           Set<String> missingIds = new HashSet<>(batchList);
           missingIds.removeAll(currentIds.keySet());
@@ -184,5 +187,15 @@ public class GeneSetsLinksResolver {
         throw new UnsupportedOperationException("Parallel processing not supported");
       }
     );
+  }
+
+  public static void main(String[] args) {
+    File input = new File("/home/hlfernandez/Investigacion/Desarrollos/Git/cnio/dreimt-utils/info.tsv");
+    File output = new File("/home/hlfernandez/Investigacion/Desarrollos/Git/cnio/dreimt-utils/output.tsv");
+    try {
+      new GeneSetsLinksResolver(1, 200).process(input, output, true);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 }
