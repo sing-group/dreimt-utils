@@ -79,10 +79,12 @@ public class GseaGeneSetHtmlParser {
       } catch (IOException e1) {
         try {
           Thread.sleep(500);
-        } catch (InterruptedException e) {}
+        } catch (InterruptedException e) {
+          throw new RuntimeException(e);
+        }
       }
     } while (attemptCount++ < attempts);
-    return Optional.empty();
+    throw new RuntimeException("Cannot connect to " + url);
   }
 
   public Optional<String> getPubmedId(InputStream htmlInputStream) {
@@ -96,8 +98,7 @@ public class GseaGeneSetHtmlParser {
       }
       return empty();
     } catch (IOException e) {
-      e.printStackTrace();
-      return empty();
+      throw new RuntimeException(e);
     }
   }
 
