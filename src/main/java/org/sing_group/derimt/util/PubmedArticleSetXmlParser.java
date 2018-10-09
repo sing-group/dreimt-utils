@@ -27,7 +27,7 @@ import org.xml.sax.SAXException;
  *
  */
 public class PubmedArticleSetXmlParser {
-  public static Map<String, PubmedArticleInfo> parse(InputStream xmlInputStream) {
+  public static Map<String, PubmedArticleInfo> parse(InputStream xmlInputStream, boolean acceptMissingAbstracts) {
     Map<String, PubmedArticleInfo> toret = new HashMap<>();
     DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 
@@ -70,11 +70,14 @@ public class PubmedArticleSetXmlParser {
         String articleTitle = articleTitleNodeList.item(0).getTextContent();
 
         NodeList abstractNodeList = medlineCitation.getElementsByTagName("AbstractText");
+        String articleAbstract = "NA";
         if (abstractNodeList.getLength() < 1) {
-          continue;
+          if (!acceptMissingAbstracts) {
+            continue;
+          }
+        } else {
+          articleAbstract = abstractNodeList.item(0).getTextContent();
         }
-
-        String articleAbstract = abstractNodeList.item(0).getTextContent();
 
         NodeList authorNodeList = medlineCitation.getElementsByTagName("Author");
         if (authorNodeList.getLength() < 1) {

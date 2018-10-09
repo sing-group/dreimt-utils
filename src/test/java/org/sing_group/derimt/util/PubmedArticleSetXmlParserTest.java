@@ -21,7 +21,7 @@ public class PubmedArticleSetXmlParserTest {
 
   @Test
   public void testParseXml() throws FileNotFoundException {
-    Map<String, PubmedArticleInfo> result = PubmedArticleSetXmlParser.parse(new FileInputStream(testXmlFile));
+    Map<String, PubmedArticleInfo> result = PubmedArticleSetXmlParser.parse(new FileInputStream(testXmlFile), true);
     assertEquals(new HashSet<>(asList("22368089", "30235322")), result.keySet());
 
     assertEquals(
