@@ -7,6 +7,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.URL;
 import java.util.Optional;
 
 /**
@@ -19,6 +20,22 @@ import java.util.Optional;
 public class GseaGeneSetHtmlParser {
 
   private static final String PUBMED = "Pubmed ";
+
+  public static Optional<String> getPubmedId(URL url, int attempts) {
+    int attemptCount = 0;
+    do {
+
+      try {
+        Optional<String> result = getPubmedId(url.openStream());
+        return result;
+      } catch (IOException e1) {
+        try {
+          Thread.sleep(500);
+        } catch (InterruptedException e) {}
+      }
+    } while (attemptCount++ < attempts);
+    return Optional.empty();
+  }
 
   public static Optional<String> getPubmedId(InputStream htmlInputStream) {
     try {
