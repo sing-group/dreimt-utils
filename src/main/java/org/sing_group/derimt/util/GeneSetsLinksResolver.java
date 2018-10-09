@@ -11,12 +11,13 @@ import java.nio.file.Files;
 import java.nio.file.OpenOption;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Optional;
 import java.util.Set;
 import java.util.logging.Logger;
@@ -24,6 +25,7 @@ import java.util.stream.Collector;
 
 public class GeneSetsLinksResolver {
   private static final Logger LOGGER = Logger.getLogger(GeneSetsLinksResolver.class.getName());
+  private static final String NA_ID = "NA";
 
   private int headerLines;
   private int batchSize;
@@ -45,48 +47,62 @@ public class GeneSetsLinksResolver {
         continue;
       }
 
-      Optional<String> pubmedId = GseaGeneSetHtmlParser.getPubmedId(new URL(optLine.get().getUrl()).openStream());
+      Optional<String> pubmedId = GseaGeneSetHtmlParser.getPubmedId(new URL(optLine.get().getUrl()), 3);
       if (!pubmedId.isPresent()) {
-        LOGGER.warning("Pubmed ID not found for: " + line);
-        continue;
+        lineToPmid.put(optLine.get(), NA_ID);
+      } else {
+        lineToPmid.put(optLine.get(), pubmedId.get());
       }
-
-      lineToPmid.put(optLine.get(), pubmedId.get());
     }
 
     Set<String> pubmedIdsSet = new HashSet<>(lineToPmid.values());
+    pubmedIdsSet.remove(NA_ID);
     List<List<String>> batchLists = pubmedIdsSet.stream().collect(blockCollector(this.batchSize));
     Map<String, PubmedArticleInfo> pubmedIds = new HashMap<>();
     for (List<String> batchList : batchLists) {
       try {
+        Thread.sleep(1000);
         Map<String, PubmedArticleInfo> currentIds = PubmedIdsResolver.resolve(batchList);
         if (currentIds.keySet().size() != batchList.size()) {
-          LOGGER.warning("Warning, the following Pubmed IDs could not have been converted: ");
           Set<String> missingIds = new HashSet<>(batchList);
           missingIds.removeAll(currentIds.keySet());
           missingIds.forEach(id -> LOGGER.warning("\t" + id));
-        } else {
-          pubmedIds.putAll(currentIds);
         }
+        pubmedIds.putAll(currentIds);
       } catch (Exception e) {
         LOGGER.warning("Error retrieving Pubmed IDs for: " + batchList);
       }
     }
 
-    lineToPmid.entrySet().forEach(e -> {
-      System.err
-        .println(e.getKey().getName() + "\t" + e.getValue() + "\t" + pubmedIds.get(e.getValue()).getArticleTitle() + "\t" + pubmedIds.get(e.getValue()).getAuthors());
-    });
-
     BufferedWriter bw = Files.newBufferedWriter(tsvOutput.toPath(), getOpenOptions(appendOutput));
     bw.write("Signature\tLink\tPubMedID\tTitle\tAuthors\tAbstract\n");
-    for (Entry<TsvLine, String> e : lineToPmid.entrySet()) {
-      String pubmedId = e.getValue();
-      PubmedArticleInfo articleInfo = pubmedIds.get(pubmedId);
-      bw.write(
-        (e.getKey().getName() + "\t" + e.getKey().getUrl() + "\t" + pubmedId + "\t" + articleInfo.getArticleTitle()
-          + "\t" + articleInfo.getAuthorsString() + "\t" + articleInfo.getArticleAbstract() + "\n")
-      );
+
+    lineToPmid.keySet().stream().sorted(new Comparator<TsvLine>() {
+
+      @Override
+      public int compare(TsvLine o1, TsvLine o2) {
+        return Integer.compare(o1.getInstanceId(), o2.getInstanceId());
+      }
+    }).forEach(tsvLine -> {
+      String pubmedId = lineToPmid.get(tsvLine);
+      PubmedArticleInfo articleInfo =
+        pubmedIds.getOrDefault(pubmedId, new PubmedArticleInfo("NA", "NA", Collections.emptyList(), "NA"));
+      try {
+        bw.write(
+          (tsvLine.getName() + "\t" + tsvLine.getUrl() + "\t" + pubmedId + "\t" + articleInfo.getArticleTitle()
+            + "\t" + articleInfo.getAuthorsString() + "\t" + articleInfo.getArticleAbstract() + "\n")
+        );
+        bw.flush();
+      } catch (IOException e) {
+        LOGGER.warning("Exception processing ID: " + pubmedId);
+        e.printStackTrace();
+      }
+    });
+
+    try {
+      bw.close();
+    } catch (IOException e) {
+      e.printStackTrace();
     }
   }
 
@@ -100,10 +116,14 @@ public class GeneSetsLinksResolver {
   }
 
   private static class TsvLine {
+    private static int instances = 0;
+
+    private int instanceId;
     private String name;
     private String url;
 
     public TsvLine(String name, String url) {
+      this.instanceId = (++instances);
       this.name = name;
       this.url = url;
     }
@@ -116,12 +136,38 @@ public class GeneSetsLinksResolver {
       return url;
     }
 
+    public int getInstanceId() {
+      return instanceId;
+    }
+
     public static Optional<TsvLine> from(String line) {
       String[] split = line.split("\t");
       if (split.length == 2) {
         return of(new TsvLine(split[0], split[1]));
       }
       return empty();
+    }
+
+    @Override
+    public int hashCode() {
+      final int prime = 31;
+      int result = 1;
+      result = prime * result + instanceId;
+      return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (this == obj)
+        return true;
+      if (obj == null)
+        return false;
+      if (getClass() != obj.getClass())
+        return false;
+      TsvLine other = (TsvLine) obj;
+      if (instanceId != other.instanceId)
+        return false;
+      return true;
     }
   }
 
