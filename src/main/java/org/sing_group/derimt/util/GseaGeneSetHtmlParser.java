@@ -63,12 +63,20 @@ public class GseaGeneSetHtmlParser implements PubmedIdFinder {
   }
 
   public Optional<String> getPubmedId(String url) throws MalformedURLException {
+    url = fixUrl(url);
+
     if (this.cache.containsKey(url)) {
       String cacheValue = this.cache.get(url);
       return cacheValue.equals(NOT_AVAILABLE) ? Optional.empty() : Optional.of(cacheValue);
     } else {
       return saveInCache(url, getPubmedId(new URL(url), 3));
     }
+  }
+
+  private static final String fixUrl(String url) {
+    return url.replace(
+      "http://www.broadinstitute.org/gsea/msigdb/cards/", "http://software.broadinstitute.org/gsea/msigdb/cards/"
+    );
   }
 
   private Optional<String> getPubmedId(URL url, int attempts) {
