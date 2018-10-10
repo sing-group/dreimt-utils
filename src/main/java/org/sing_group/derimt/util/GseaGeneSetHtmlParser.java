@@ -6,6 +6,7 @@ import static java.util.Optional.of;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -25,7 +26,7 @@ import java.util.Optional;
  * @author hlfernandez
  *
  */
-public class GseaGeneSetHtmlParser {
+public class GseaGeneSetHtmlParser implements PubmedIdFinder {
   private static final String PUBMED = "Pubmed ";
   private static final String NOT_AVAILABLE = "NOT_AVAILABLE";
 
@@ -87,7 +88,11 @@ public class GseaGeneSetHtmlParser {
     throw new RuntimeException("Cannot connect to " + url);
   }
 
-  public Optional<String> getPubmedId(InputStream htmlInputStream) {
+  public Optional<String> getPubmedId(File htmlFile) throws FileNotFoundException {
+    return getPubmedId(new FileInputStream(htmlFile));
+  }
+
+  private Optional<String> getPubmedId(InputStream htmlInputStream) {
     try {
       BufferedReader br = new BufferedReader(new InputStreamReader(htmlInputStream, "ISO-8859-1"));
       String line;

@@ -18,7 +18,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
-public class CellHtmlParser {
+public class CellHtmlParser implements PubmedIdFinder {
   private static final String NOT_AVAILABLE = "NOT_AVAILABLE";
 
   private File cacheFile;

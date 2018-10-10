@@ -3,7 +3,6 @@ package org.sing_group.derimt.util;
 import static org.junit.Assert.assertEquals;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Optional;
 
@@ -19,7 +18,7 @@ public class GseaGeneSetHtmlParserTest {
 
   @Test
   public void testParseXml() throws FileNotFoundException {
-    Optional<String> result = new GseaGeneSetHtmlParser().getPubmedId(new FileInputStream(testHtmlFile));
+    Optional<String> result = new GseaGeneSetHtmlParser().getPubmedId(testHtmlFile);
     assertEquals("12526810", result.get());
   }
 }
