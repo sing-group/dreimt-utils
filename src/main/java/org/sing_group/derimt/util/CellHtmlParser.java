@@ -25,7 +25,7 @@ public class CellHtmlParser implements PubmedIdFinder {
   private Map<String, String> cache = new HashMap<>();
 
   public CellHtmlParser() {
-    this(new File("data/gsea-pubmed-ids-cache.dat"));
+    this(new File("data/cell-pubmed-ids-cache.dat"));
   }
 
   public CellHtmlParser(File cacheFile) {
