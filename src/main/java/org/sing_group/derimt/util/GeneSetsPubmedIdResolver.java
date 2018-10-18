@@ -3,14 +3,14 @@ package org.sing_group.derimt.util;
 import static java.util.Optional.empty;
 import static java.util.Optional.of;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.util.Comparator;
-import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 import java.util.logging.Logger;
 
@@ -28,72 +28,70 @@ public class GeneSetsPubmedIdResolver {
   }
 
   public void process(File tsvInput, File tsvOutput, boolean appendOutput) throws IOException {
-    List<String> inputLines = Files.readAllLines(tsvInput.toPath());
-    List<String> headerLines = inputLines.subList(0, this.headerLines);
-    inputLines = inputLines.subList(this.headerLines, inputLines.size());
+    int lineCount = 0;
+    List<String> headerLines = new LinkedList<>();
 
-    Map<TsvLine, String> lineToPmid = new HashMap<>();
-    for (String line : inputLines) {
-      Optional<TsvLine> optLine = TsvLine.from(line, this.linkColumn);
-      if (!optLine.isPresent()) {
-        LOGGER.warning("Ignore line with invalid format: " + line);
-        continue;
-      }
+    try (
+      BufferedReader br = new BufferedReader(new FileReader(tsvInput));
+      BufferedWriter bw = Files.newBufferedWriter(tsvOutput.toPath(), FileUtils.getOpenOptions(appendOutput))
+    ) {
+      String line;
+      while ((line = br.readLine()) != null) {
+        if (lineCount < this.headerLines) {
+          lineCount++;
+          headerLines.add(line);
 
-      Optional<PubmedIdFinder> pubmedIdFinder = PubmedIdFinder.getFinderForUrl(optLine.get().getUrl());
+          if (lineCount == this.headerLines) {
+            headerLines.forEach(l -> {
+              try {
+                bw.write(l + "\tPubMedID\n");
+              } catch (IOException e) {
+                LOGGER.warning("Exception writing header line: " + l);
+                e.printStackTrace();
+              }
+            });
+            bw.flush();
+          }
 
-      if (!pubmedIdFinder.isPresent()) {
-        lineToPmid.put(optLine.get(), UNRECOGNISED_LINK);
-      } else {
-        Optional<String> pubmedId = pubmedIdFinder.get().getPubmedId(optLine.get().getUrl());
-        if (!pubmedId.isPresent()) {
-          lineToPmid.put(optLine.get(), NA_ID);
+          continue;
+        }
+
+        Optional<TsvLine> optLine = TsvLine.from(line, this.linkColumn);
+        if (!optLine.isPresent()) {
+          LOGGER.warning("Ignore line with invalid format: " + line);
+          continue;
+        }
+
+        Optional<PubmedIdFinder> pubmedIdFinder = PubmedIdFinder.getFinderForUrl(optLine.get().getUrl());
+
+        String pubMedId = "";
+        if (!pubmedIdFinder.isPresent()) {
+          pubMedId = UNRECOGNISED_LINK;
         } else {
-          lineToPmid.put(optLine.get(), pubmedId.get());
+          Optional<String> pubmedId = pubmedIdFinder.get().getPubmedId(optLine.get().getUrl());
+          if (!pubmedId.isPresent()) {
+            pubMedId = NA_ID;
+          } else {
+            pubMedId = pubmedId.get();
+          }
+        }
+
+        try {
+          bw.write(optLine.get().getLine() + "\t" + pubMedId + "\n");
+          bw.flush();
+        } catch (IOException e) {
+          LOGGER.warning("Exception processing ID: " + pubMedId);
+          e.printStackTrace();
         }
       }
-    }
-
-    BufferedWriter bw = Files.newBufferedWriter(tsvOutput.toPath(), FileUtils.getOpenOptions(appendOutput));
-    headerLines.forEach(l -> {
-      try {
-        bw.write(l + "\tPubMedID\n");
-      } catch (IOException e) {}
-    });
-
-    lineToPmid.keySet().stream().sorted(new Comparator<TsvLine>() {
-
-      @Override
-      public int compare(TsvLine o1, TsvLine o2) {
-        return Integer.compare(o1.getInstanceId(), o2.getInstanceId());
-      }
-    }).forEach(tsvLine -> {
-      String pubmedId = lineToPmid.get(tsvLine);
-      try {
-        bw.write(tsvLine.getLine() + "\t" + pubmedId + "\n");
-        bw.flush();
-      } catch (IOException e) {
-        LOGGER.warning("Exception processing ID: " + pubmedId);
-        e.printStackTrace();
-      }
-    });
-
-    try {
-      bw.close();
-    } catch (IOException e) {
-      e.printStackTrace();
     }
   }
 
   private static class TsvLine {
-    private static int instances = 0;
-
-    private int instanceId;
     private String line;
     private String url;
 
     public TsvLine(String line, String url) {
-      this.instanceId = (++instances);
       this.line = line;
       this.url = url;
     }
@@ -106,38 +104,12 @@ public class GeneSetsPubmedIdResolver {
       return url;
     }
 
-    public int getInstanceId() {
-      return instanceId;
-    }
-
     public static Optional<TsvLine> from(String line, int linkColumn) {
       String[] split = line.split("\t");
       if (split.length >= linkColumn) {
         return of(new TsvLine(line, split[linkColumn]));
       }
       return empty();
-    }
-
-    @Override
-    public int hashCode() {
-      final int prime = 31;
-      int result = 1;
-      result = prime * result + instanceId;
-      return result;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-      if (this == obj)
-        return true;
-      if (obj == null)
-        return false;
-      if (getClass() != obj.getClass())
-        return false;
-      TsvLine other = (TsvLine) obj;
-      if (instanceId != other.instanceId)
-        return false;
-      return true;
     }
   }
 
