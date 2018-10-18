@@ -38,12 +38,6 @@ public interface PubmedIdFinder {
    *         appropriate implementation.
    */
   public static Optional<PubmedIdFinder> getFinderForUrl(String url) {
-    if (url.contains("broadinstitute")) {
-      return Optional.of(new GseaGeneSetHtmlParser());
-    } else if (url.contains("cell.com/immunity")) {
-      return Optional.of(new CellHtmlParser());
-    } else {
-      return Optional.empty();
-    }
+    return PubmedIdFinderFactory.getInstance().getFinderForUrl(url);
   }
 }
