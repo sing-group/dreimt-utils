@@ -1,7 +1,5 @@
 package org.sing_group.derimt.util;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.net.MalformedURLException;
 import java.util.Optional;
 
@@ -20,15 +18,6 @@ public interface PubmedIdFinder {
    * @throws MalformedURLException if the specified url is malformed
    */
   Optional<String> getPubmedId(String url) throws MalformedURLException;
-
-  /**
-   * Finds the PubMedID in the specified {@code file}.
-   * 
-   * @param file the file where the PubMedID must be found
-   * @return the PubMedID wrapped as an {@code Optional} that will be empty if it cannot found
-   * @throws FileNotFoundException if the file cannot be found
-   */
-  Optional<String> getPubmedId(File file) throws FileNotFoundException;
 
   /**
    * Returns an appropriate {@code PubmedIdFinder} for the specified url.

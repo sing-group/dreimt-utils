@@ -1,0 +1,8 @@
+<pmcids status="ok">
+<request idtype="doi" dois="" versions="yes" showaiid="no">
+<warning>no e-mail provided</warning>
+<warning>no tool provided</warning>
+<echo>ids=10.1093%2Fnar%2Fgks1195</echo>
+</request>
+<record requested-id="10.1093/NAR/GKS1195" pmcid="PMC3531190" pmid="23193287" doi="10.1093/nar/gks1195"><versions><version pmcid="PMC3531190.1" current="true"/></versions></record>
+</pmcids>

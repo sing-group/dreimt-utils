@@ -7,9 +7,13 @@ import java.util.Optional;
 
 public class PubmedIdFinderFactory {
   private static PubmedIdFinderFactory instance = null;
-  
+
   private final GseaGeneSetHtmlParser gseaGeneSetHtmlParser = new GseaGeneSetHtmlParser();
   private final CellHtmlParser cellHtmlParser = new CellHtmlParser();
+  private final GenomeBiologyBiomedCentralUrlParser genomeBiologyBiomedCentralUrlParser =
+    new GenomeBiologyBiomedCentralUrlParser();
+  private final NatureUrlParser natureUrlParser = new NatureUrlParser();
+  private final DoiUrlParser doiUrlParser = new DoiUrlParser();
 
   protected PubmedIdFinderFactory() {}
 
@@ -19,7 +23,7 @@ public class PubmedIdFinderFactory {
     }
     return instance;
   }
-  
+
   /**
    * Returns an appropriate {@code PubmedIdFinder} for the specified url.
    * 
@@ -29,9 +33,15 @@ public class PubmedIdFinderFactory {
    */
   public Optional<PubmedIdFinder> getFinderForUrl(String url) {
     if (url.contains("broadinstitute")) {
-      return of(gseaGeneSetHtmlParser );
+      return of(gseaGeneSetHtmlParser);
     } else if (url.contains("cell.com/immunity")) {
       return of(cellHtmlParser);
+    } else if (url.contains("genomebiology.biomedcentral.com/articles/")) {
+      return of(genomeBiologyBiomedCentralUrlParser);
+    } else if (url.contains("dx.doi.org") || url.contains("doi.org")) {
+      return of(doiUrlParser);
+    } else if (url.contains("www.nature.com/articles/")) {
+      return of(natureUrlParser);
     } else {
       return empty();
     }

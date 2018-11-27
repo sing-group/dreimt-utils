@@ -62,6 +62,7 @@ public class GseaGeneSetHtmlParser implements PubmedIdFinder {
     }
   }
 
+  @Override
   public Optional<String> getPubmedId(String url) throws MalformedURLException {
     url = fixUrl(url);
 
