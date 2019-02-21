@@ -1,7 +1,9 @@
 package org.sing_group.derimt.util;
 
 import java.net.MalformedURLException;
+import java.util.Map;
 import java.util.Optional;
+import java.util.Map.Entry;
 
 /**
  * The interface that defines methods to find a PubMedID in the content of an internet address or file.
@@ -28,5 +30,13 @@ public interface PubmedIdFinder {
    */
   public static Optional<PubmedIdFinder> getFinderForUrl(String url) {
     return PubmedIdFinderFactory.getInstance().getFinderForUrl(url);
+  }
+  
+  default String replace(String string, Map<String, String> replacements) {
+    for (Entry<String, String> entry : replacements.entrySet()) {
+      string = string.replace(entry.getKey(), entry.getValue());
+    }
+
+    return string;
   }
 }

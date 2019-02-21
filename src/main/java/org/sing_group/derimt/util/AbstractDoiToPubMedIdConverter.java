@@ -11,7 +11,6 @@ import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Optional;
 import java.util.logging.Logger;
 
@@ -92,13 +91,5 @@ public abstract class AbstractDoiToPubMedIdConverter implements PubmedIdFinder {
     } catch (IOException e) {
       throw new RuntimeException(e);
     }
-  }
-
-  protected String replace(String string, Map<String, String> replacements) {
-    for (Entry<String, String> entry : replacements.entrySet()) {
-      string = string.replace(entry.getKey(), entry.getValue());
-    }
-
-    return string;
   }
 }

@@ -14,6 +14,7 @@ public class PubmedIdFinderFactory {
     new GenomeBiologyBiomedCentralUrlParser();
   private final NatureUrlParser natureUrlParser = new NatureUrlParser();
   private final DoiUrlParser doiUrlParser = new DoiUrlParser();
+  private final NcbiPubMedUrlParser ncbiPubMedUrlParser = new NcbiPubMedUrlParser();
 
   protected PubmedIdFinderFactory() {}
 
@@ -42,6 +43,8 @@ public class PubmedIdFinderFactory {
       return of(doiUrlParser);
     } else if (url.contains("www.nature.com/articles/")) {
       return of(natureUrlParser);
+    } else if (url.contains("www.ncbi.nlm.nih.gov/pubmed/")) {
+      return of(ncbiPubMedUrlParser);
     } else {
       return empty();
     }
